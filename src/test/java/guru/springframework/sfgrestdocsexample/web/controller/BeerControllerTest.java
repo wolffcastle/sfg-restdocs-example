@@ -57,7 +57,7 @@ class BeerControllerTest {
                 .param("iscold", "yes")
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andDo(document("v1/beer-get",
+                .andDo(document("v1/beer-get",//choose a unique name to dont overwrite the documentation
                         pathParameters (
                                 parameterWithName("beerId").description("UUID of desired beer to get.")
                         ),

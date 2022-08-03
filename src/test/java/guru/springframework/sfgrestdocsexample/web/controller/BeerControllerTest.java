@@ -82,8 +82,10 @@ class BeerControllerTest {
         BeerDto beerDto =  getValidBeerDto();
         String beerDtoJson = objectMapper.writeValueAsString(beerDto);
 
+        //New for contraints restdocs
         ConstrainedFields fields = new ConstrainedFields(BeerDto.class);
 
+        //use the fields field instead fieldWithPath, because ContrainedField class do this
         mockMvc.perform(post("/api/v1/beer/")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(beerDtoJson))

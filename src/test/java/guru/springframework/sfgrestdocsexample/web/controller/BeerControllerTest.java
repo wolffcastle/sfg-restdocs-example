@@ -61,7 +61,7 @@ class BeerControllerTest {
                         requestParameters(
                                 parameterWithName("iscold").description("Is Beer Cold Query param")
                         ),
-                        responseFields(
+                        responseFields( //Ýou have do document all the parameters, otherwise you get an error in your test
                                 fieldWithPath("id").description("Id of Beer"),
                                 fieldWithPath("version").description("Version number"),
                                 fieldWithPath("createdDate").description("Date Created"),
